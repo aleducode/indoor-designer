@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indoor</title>
+    <link rel="stylesheet" href="dist/css/demos.css">
+
+    <link href="dist/css/FancyProductDesigner.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js" integrity="sha512-P6uimDKoj1nnPSo2sPmgbZy99pPq9nHXhLwddOnLi1DC+fEM83FEUcHPRPifbx1rlRkdMinViaWyDfG45G9BuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='dist/js/FancyProductDesigner.min.js'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<style>
+    .fpd-container fpd-actions-bar {
+        background:black;
+    }
+    .w-100 {
+        width: 100%;
+    }
+</style>
+</head>
+
+<body>
+    <div class="col-12 text-center">
+        <img src="data/images/INDOOR_LOGO-01.png" alt="" class="img-fluid" width="120">
+
+        <div class="p-5
+         w-100">
+            <div id="fpd-target" class="fpd-sidebar fpd-shadow-1 fpd-views-inside-right w-100">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script>
+
+    const appOptions = {
+        "productsJSON": './data/products/product-categories.json',
+        "designsJSON": './data/designs/design-categories.json',
+        "layouts": './data/business-cards-layouts.json',
+        "langJSON": './data/langs/default.json',
+        "fonts": [
+            {
+                "name": "Agdasima",
+                "variants": [
+                    "bold"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Anton",
+                "url": "google"
+            },
+            {
+                "name": "Arvo",
+                "variants": [
+                    "bold",
+                    "italic",
+                    "bold-italic"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Bangers",
+                "url": "google"
+            },
+            {
+                "name": "Bebas Neue",
+                "url": "google"
+            },
+            {
+                "name": "Bevan",
+                "variants": [
+                    "italic"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Black Ops One",
+                "url": "google"
+            },
+            {
+                "name": "Bungee",
+                "url": "google"
+            },
+            {
+                "name": "Bungee Inline",
+                "url": "google"
+            },
+            {
+                "name": "Bungee Outline",
+                "url": "google"
+            },
+            {
+                "name": "Changa",
+                "variants": [
+                    "bold"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Chewy",
+                "url": "google"
+            },
+            {
+                "name": "Concert One",
+                "url": "google"
+            },
+            {
+                "name": "Contrail One",
+                "url": "google"
+            },
+            {
+                "name": "Creepster",
+                "url": "google"
+            },
+            {
+                "name": "Denk One",
+                "url": "google"
+            },
+            {
+                "name": "Do Hyeon",
+                "url": "google"
+            },
+            {
+                "name": "Exo 2",
+                "variants": [
+                    "bold",
+                    "italic",
+                    "bold-italic"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Faster One",
+                "url": "google"
+            },
+            {
+                "name": "Finger Paint",
+                "url": "google"
+            },
+            {
+                "name": "Fjalla One",
+                "url": "google"
+            },
+            {
+                "name": "Fugaz One",
+                "url": "google"
+            },
+            {
+                "name": "Germania One",
+                "url": "google"
+            },
+            {
+                "name": "Hammersmith One",
+                "url": "google"
+            },
+            {
+                "name": "Handjet",
+                "variants": [
+                    "bold"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Holtwood One SC",
+                "url": "google"
+            },
+            {
+                "name": "Jockey One",
+                "url": "google"
+            },
+            {
+                "name": "Kanit",
+                "variants": [
+                    "bold",
+                    "italic",
+                    "bold-italic"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Knewave",
+                "url": "google"
+            },
+            {
+                "name": "Kumar One",
+                "url": "google"
+            },
+            {
+                "name": "Lakki Reddy",
+                "url": "google"
+            },
+            {
+                "name": "Lemon",
+                "url": "google"
+            },
+            {
+                "name": "Londrina Solid",
+                "url": "google"
+            },
+            {
+                "name": "New Rocker",
+                "url": "google"
+            },
+            {
+                "name": "Orbitron",
+                "variants": [
+                    "bold"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Permanent Marker",
+                "url": "google"
+            },
+            {
+                "name": "Pirata One",
+                "url": "google"
+            },
+            {
+                "name": "Pixelify Sans",
+                "variants": [
+                    "bold"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Press Start 2P",
+                "url": "google"
+            },
+            {
+                "name": "Racing Sans One",
+                "url": "google"
+            },
+            {
+                "name": "Rationale",
+                "url": "google"
+            },
+            {
+                "name": "Righteous",
+                "url": "google"
+            },
+            {
+                "name": "Roddenberry",
+                "variants": [],
+                "url": "fonts/Roddenberry.ttf"
+            },
+            {
+                "name": "Russo One",
+                "url": "google"
+            },
+            {
+                "name": "Saira Stencil One",
+                "url": "google"
+            },
+            {
+                "name": "Skranji",
+                "variants": [
+                    "bold"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Squada One",
+                "url": "google"
+            },
+            {
+                "name": "Staatliches",
+                "url": "google"
+            },
+            {
+                "name": "Teko",
+                "variants": [
+                    "bold"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Tektur",
+                "variants": [
+                    "bold"
+                ],
+                "url": "google"
+            },
+            {
+                "name": "Timmana",
+                "url": "google"
+            },
+            {
+                "name": "Trade Winds",
+                "url": "google"
+            },
+            {
+                "name": "Vampiro One",
+                "url": "google"
+            },
+            {
+                "name": "Viga",
+                "url": "google"
+            },
+            {
+                "name": "Wallpoet",
+                "url": "google"
+            }
+        ],
+        "facebookAppId": "",
+        "instagramClientId": "",
+        "instagramRedirectUri": "",
+        "instagramTokenUri": "",
+        "hexNames": {
+            "FFFFFF": "White",
+            "000000": "Black",
+            "FFC13F": "Yellow",
+            "F07339": "Orange",
+            "DE2631": "Red",
+            "3654A3": "Blue",
+            "232048": "Navy",
+            "348549": "Green",
+            "671E2A": "Burgundy",
+            "654691": "Violet",
+            "96BFE3": "Sky-Blue",
+            "0A1E45": "Dark-Blue-Cuffs",
+            "0A0A0A": "Black",
+            "232323": "Black-80%",
+            "555555": "Black-50%",
+            "CDCDCD": "Black-15%",
+            "412623": "Dark-Burgundy",
+            "4E1616": "Burgundy",
+            "800707": "Dark-Red",
+            "BA0909": "Red",
+            "D55108": "Orange",
+            "E88014": "Light-Orange",
+            "E29717": "Dark-Yellow",
+            "FDC300": "Sun-Yellow",
+            "FFED00": "Lemon-Yellow",
+            "646702": "Olive-Green",
+            "042E21": "Storm-Green",
+            "05462B": "Dark-Green",
+            "026C27": "Flag-Green",
+            "489A29": "Light-Green",
+            "A4CB16": "Lime",
+            "191F28": "Night-Blue",
+            "172339": "Navy-Blue",
+            "0A376E": "Royal",
+            "005A96": "Light-Royal",
+            "08A1BB": "Cyan",
+            "8DEAF4": "Sky-Blue",
+            "92EFBD": "Cabbage",
+            "234955": "Chambray",
+            "2E2846": "Violet-Blue",
+            "402E54": "Violet",
+            "736D88": "Lilac",
+            "BDB7CF": "Lavanda",
+            "56182F": "Wine-Violet",
+            "761133": "Fuxia",
+            "A60E32": "Magenta",
+            "D83636": "Fire-Coral",
+            "F2C5AD": "Pink",
+            "F8E9E8": "Light-Pink",
+            "381F0E": "Dark-Brown",
+            "583116": "Brown",
+            "AA650F": "Light-Brown",
+            "6F3827": "Cocoa",
+            "C7932E": "Gold",
+            "1E1E1E": "Black-Bag",
+            "0E0E0E": "Black-Cuffs",
+            "1B388A": "Blue-Cuffs",
+            "141927": "Dark-Blue-Bag",
+            "FF66AC": "Magenta-Fluo",
+            "5FE520": "Green-Fluo",
+            "FC5B35": "Orange-Fluo",
+            "E9FF15": "Yellow-Fluo",
+            "3DD684": "Mint",
+            "F591A7": "Candy-Pink",
+            "b2b2b2": "Black 30%",
+            "08adb1": "Fresh"
+        },
+        "replaceInitialElements": 1,
+        "uploadZonesTopped": 1,
+        "mainBarContainer": ".fpd-main-bar-position",
+        "responsive": 1,
+        "modalMode": null,
+        "loadFirstProductInStage": 1,
+        "watermark": "",
+        "unsavedProductAlert": 1,
+        "hideDialogOnAdd": 1,
+        "fitImagesInCanvas": 1,
+        "inCanvasTextEditing": 1,
+        "openTextInputOnSelect": 0,
+        "saveActionBrowserStorage": 0,
+        "uploadAgreementModal": 1,
+        "autoOpenInfo": 0,
+        "allowedImageTypes": [
+            "jpeg",
+            "png",
+            "svg",
+            "pdf"
+        ],
+        "replaceColorsInColorGroup": 0,
+        "pixabayApiKey": "",
+        "pixabayHighResImages": 0,
+        "pixabayLang": "en",
+        "sizeTooltip": 0,
+        "applyFillWhenReplacing": 1,
+        "applySizeWhenReplacing": 0,
+        "highlightEditableObjects": "",
+        "layouts": [],
+        "disableTextEmojis": 1,
+        "smartGuides": 1,
+        "colorPickerPalette": [],
+        "customizationRequiredRule": "none",
+        "swapProductConfirmation": 1,
+        "toolbarTextareaPosition": "top",
+        "textLinkGroupProps": [],
+        "dynamicDesigns": {},
+        "textTemplates": [],
+        "multiSelection": 0,
+        "maxCanvasHeight": 1,
+        "mobileGesturesBehaviour": "pinchPanCanvas",
+        "cornerControlsStyle": "advanced",
+        "imageQualityRatings": [],
+        "downloadFilename": "Kit Calcio Evolution -  2025-01-23 - jersix.com",
+        "autoFillUploadZones": 0,
+        "dragDropImagesToUploadZones": 1,
+        "fileServerURL": "",
+        "elementParameters": {
+            "originX": "center",
+            "originY": "center"
+        },
+        "imageParameters": {
+            "colors": "#FFFFFF,#0A0A0A,#232323,#555555,#B2B2B2,#CDCDCD,#412623,#4E1616,#800707,#BA0909,#D55108,#E88014,#E29717,#FDC300,#FFED00,#646702,#042E21,#05462B,#026C27,#489A29,#A4CB16,#191F28,#172339,#0A376E,#005A96,#08A1BB,#8DEAF4,#08ADB1,#3DD684,#92EFBD,#234955,#2E2846,#402E54,#736D88,#BDB7CF,#56182F,#761133,#A60E32,#D83636,#F591A7,#F2C5AD,#F8E9E8,#381F0E,#583116,#AA650F,#6F3827,#C7932E",
+            "colorLinkGroup": "",
+            "colorPrices": [],
+            "replaceInAllViews": 0,
+            "patterns": "",
+            "padding": 0
+        },
+        "textParameters": {
+            "padding": 5,
+            "fontFamily": "Roddenberry",
+            "colorPrices": [],
+            "replaceInAllViews": 1,
+            "patterns": "",
+            "strokeColors": [
+                "#FFFFFF",
+                "#0A0A0A",
+                "#232323",
+                "#555555",
+                "#B2B2B2",
+                "#CDCDCD",
+                "#412623",
+                "#4E1616",
+                "#800707",
+                "#BA0909",
+                "#D55108",
+                "#E88014",
+                "#E29717",
+                "#FDC300",
+                "#FFED00",
+                "#646702",
+                "#042E21",
+                "#05462B",
+                "#026C27",
+                "#489A29",
+                "#A4CB16",
+                "#191F28",
+                "#172339",
+                "#0A376E",
+                "#005A96",
+                "#08A1BB",
+                "#8DEAF4",
+                "#08ADB1",
+                "#3DD684",
+                "#92EFBD",
+                "#234955",
+                "#2E2846",
+                "#402E54",
+                "#736D88",
+                "#BDB7CF",
+                "#56182F",
+                "#761133",
+                "#A60E32",
+                "#D83636",
+                "#F591A7",
+                "#F2C5AD",
+                "#F8E9E8",
+                "#381F0E",
+                "#583116",
+                "#AA650F",
+                "#6F3827",
+                "#C7932E"
+            ],
+            "colors": "#FFFFFF,#0A0A0A,#232323,#555555,#B2B2B2,#CDCDCD,#412623,#4E1616,#800707,#BA0909,#D55108,#E88014,#E29717,#FDC300,#FFED00,#646702,#042E21,#05462B,#026C27,#489A29,#A4CB16,#191F28,#172339,#0A376E,#005A96,#08A1BB,#8DEAF4,#08ADB1,#3DD684,#92EFBD,#234955,#2E2846,#402E54,#736D88,#BDB7CF,#56182F,#761133,#A60E32,#D83636,#F591A7,#F2C5AD,#F8E9E8,#381F0E,#583116,#AA650F,#6F3827,#C7932E",
+            "maxCurveRadius": "400"
+        },
+        "customImageParameters": {
+            "colors": "#FFFFFF,#0A0A0A,#232323,#555555,#B2B2B2,#CDCDCD,#412623,#4E1616,#800707,#BA0909,#D55108,#E88014,#E29717,#FDC300,#FFED00,#646702,#042E21,#05462B,#026C27,#489A29,#A4CB16,#191F28,#172339,#0A376E,#005A96,#08A1BB,#8DEAF4,#08ADB1,#3DD684,#92EFBD,#234955,#2E2846,#402E54,#736D88,#BDB7CF,#56182F,#761133,#A60E32,#D83636,#F591A7,#F2C5AD,#F8E9E8,#381F0E,#583116,#AA650F,#6F3827,#C7932E",
+            "autoCenter": true,
+            "left": 0,
+            "top": 0,
+            "z": -1,
+            "replaceInAllViews": false,
+            "draggable": true,
+            "rotatable": true,
+            "resizable": true,
+            "zChangeable": true,
+            "autoSelect": true,
+            "topped": false,
+            "uniScalingUnlockable": false,
+            "copyable": false,
+            "boundingBoxMode": "inside",
+            "scaleMode": "fit",
+            "price": 0,
+            "minScaleLimit": 0.01,
+            "removable": true,
+            "minW": 100,
+            "minH": 100,
+            "maxW": 10000,
+            "maxH": 10000,
+            "maxSize": 50,
+            "minDPI": 0,
+            "resizeToW": "500",
+            "resizeToH": "500",
+            "advancedEditing": false
+        },
+        "customTextParameters": {
+            "colors": "#FFFFFF,#0A0A0A,#232323,#555555,#B2B2B2,#CDCDCD,#412623,#4E1616,#800707,#BA0909,#D55108,#E88014,#E29717,#FDC300,#FFED00,#646702,#042E21,#05462B,#026C27,#489A29,#A4CB16,#191F28,#172339,#0A376E,#005A96,#08A1BB,#8DEAF4,#08ADB1,#3DD684,#92EFBD,#234955,#2E2846,#402E54,#736D88,#BDB7CF,#56182F,#761133,#A60E32,#D83636,#F591A7,#F2C5AD,#F8E9E8,#381F0E,#583116,#AA650F,#6F3827,#C7932E",
+            "fill": "#000000",
+            "autoCenter": true,
+            "left": 0,
+            "top": 0,
+            "z": -1,
+            "replaceInAllViews": true,
+            "draggable": true,
+            "rotatable": true,
+            "resizable": true,
+            "zChangeable": true,
+            "autoSelect": true,
+            "topped": false,
+            "uniScalingUnlockable": false,
+            "fontSize": 90,
+            "minFontSize": 1,
+            "maxFontSize": 1000,
+            "widthFontSize": 0,
+            "textAlign": "center",
+            "maxLength": 0,
+            "maxLines": 0,
+            "curvable": true,
+            "curveReverse": false,
+            "curveSpacing": 10,
+            "curveRadius": 80,
+            "maxCurveRadius": 400,
+            "boundingBoxMode": "inside",
+            "price": 0,
+            "removable": true
+        },
+        "fabricCanvasOptions": {
+            "allowTouchScrolling": 0,
+            "perPixelTargetFind": 0
+        },
+        "qrCodeProps": {
+            "price": 0,
+            "resizeToW": 0,
+            "resizeToH": 0,
+            "draggable": 1,
+            "resizable": 1,
+            "boundingBox": null,
+            "boundingBoxMode": "inside"
+        },
+        "boundingBoxProps": {
+            "strokeWidth": 1
+        },
+        "guidedTour": {
+            "module:products": "Choose a design",
+            "module:manage-layers": "Change the colors of the elements",
+            "module:images": "Add logos or images",
+            "module:text": "Add custom text",
+            "module:names-numbers": "Enter a player list",
+            "module:save-load": "Save and load your design",
+            "action:undo": "Back to previous edit",
+            "action:redo": "Move on to the next edit",
+            ".fpd-icon-menu": "Click on \"File\" to discover additional functions such as Download, Preview, Zoom and the Guided Tour"
+        },
+        "namesNumbersDropdown": [
+            "4XS(6y)",
+            "3XS(8y)",
+            "2XS(10y)",
+            "XS(12y)",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+        ],
+        "namesNumbersEntryPrice": 0,
+        "colorSelectionPlacement": "",
+        "enableDynamicViews": 0,
+        "dynamicViewsOptions": {
+            "unit": "mm",
+            "formats": [],
+            "pricePerArea": "0",
+            "minWidth": "0",
+            "minHeight": "0",
+            "maxWidth": "1000",
+            "maxHeight": "1000"
+        },
+        "bulkVariationsPlacement": "",
+        "bulkVariations": [],
+        "pricingRules": [],
+        "canvasHeight": "auto",
+        "responsiveBreakpoints": {
+            "small": 768,
+            "medium": 1024
+        },
+        "customTextAsTextbox": 0,
+        "viewThumbnailsWrapper": "",
+        "rulerUnit": "mm",
+        "rulerPosition": "canvas",
+        "rulerFixed": 0,
+        "cropMasks": [],
+        "stageWidth": 600,
+        "stageHeight": 800,
+        "gridColumns": "",
+        "initialActiveModule": "products",
+        "selectedColor": "#f5f5f5",
+        "boundingBoxColor": "#005ede",
+        "outOfBoundaryColor": "#990000",
+        "cornerIconColor": "#000000",
+        "toolbarPlacement": "smart",
+        "mainBarModules": [
+            "products",
+            "manage-layers",
+            "images",
+            "text",
+            "designs",
+            "names-numbers",
+            "save-load"
+        ],
+        "actions": {
+        "reset_product": "Reset Product",
+        "zoom": "Zoom",
+        "download": "Download",
+        "download_current_view": "Download Current View",
+        "info": "Info",
+        "info_content": "You can set the info text in the Fancy Product Designer Labels settings.",
+        "print": "Print",
+        "undo": "Undo",
+        "redo": "Redo",
+        "snap": "Snap",
+        "preview_lightbox": "Preview",
+        "ruler": "Ruler",
+        "previous_view": "Previous View",
+        "next_view": "Next View",
+        "guided_tour": "Start Guided Tour",
+        "menu_file": "Menu File",
+        "menu_more": "More",
+        "modal_done": "Done",
+        "qr_code": "QR-Code",
+        "save_load": "Saved Designs"
+    },
+    "modules": {
+        "products": "Change Design",
+        "products_confirm_replacement": "Are you sure to replace the product?",
+        "products_confirm_button": "Yes, continue!",
+        "images": "Add Logo",
+        "upload_zone": "Click or add images here (png, svg, jpeg, pdf)",
+        "facebook_select_album": "Select an Album",
+        "text": "Add Text",
+        "text_input_placeholder": "Add Text...",
+        "text_add_btn": "Add Text",
+        "designs": "Add Elements",
+        "designs_search_in": "Search In",
+        "manage_layers": "Colors",
+        "images_agreement": "IMPORTANT: it is strictly forbidden to include copyrighted logos and trademarks and their satires or parodies, or vulgar\/inappropriate customizations. Insert logos in the highest possible quality (vector format is recommended SVG).",
+        "images_confirm_button": "Confirm",
+        "images_pdf_upload_info": "Creating images from PDF...",
+        "pixabay_search": "Search in Pixabay",
+        "text_layers": "Text Layers",
+        "text_layers_clear": "Clear",
+        "layouts": "Layouts",
+        "layouts_confirm_replacement": "Do you want to replace all elements of the current model?  |  Vuoi sostituire tutti gli elementi del modello corrente?",
+        "layouts_confirm_button": "Yes, continue!",
+        "save_load": "Saved Designs",
+        "save_load_add_btn": "Save Design",
+        "save_load_input_placeholder": "Optional: Enter a title",
+        "qr_code_input": "Enter a URL, some text...",
+        "qr_code_add_btn": "Add QR-Code",
+        "names_numbers": "Names & Numbers",
+        "names_numbers_add_new": "Add New",
+        "names_numbers_remove": "Remove",
+        "browse_file": "Browse File",
+        "uploads": "Uploads",
+        "text_to_images": "Text To Images",
+        "text_to_images_generate": "Generate",
+        "text_to_images_info": "Input a description of the desired image, and we'll create it for you."
+    },
+        "priceFormat": {
+            "currency": "%d<span class=\"woocommerce-Price-currencySymbol\">&euro;<\/span>",
+            "decimalSep": ",",
+            "thousandSep": "."
+        }
+    }
+
+    const fpd = new FancyProductDesigner(document.getElementById('fpd-target'), appOptions);
+
+</script>
+</body>
+
+</html>

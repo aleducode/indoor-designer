@@ -7,7 +7,6 @@
                     "productTitle": "Kit Evolution - UPWARD",
                     "productThumbnail": "../data/images/p1/upward-kit-evolution-p.png",
                     "title": "View 1",
-                    "thumbnail": "../data/images/p1/completo-kit-calcio-classic.jpg",
                     "options": {
                         "stageWidth": 1400,
                         "stageHeight": 1200,
@@ -797,7 +796,6 @@
                     "productTitle": "Kit Evolution - LEVELS",
                     "productThumbnail": "../data/images/p2/levels-kit-evolution-p.png",
                     "title": "View 1",
-                    "thumbnail": "../data/images/p2/completo-kit-calcio-classic.jpg",
                     "options": {
                         "stageWidth": 1400,
                         "stageHeight": 1200,

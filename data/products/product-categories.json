@@ -67,7 +67,7 @@
                             }
                         },
                         {
-                            "title": "Color 2 (Sleeves)",
+                            "title": "Color 2 (Mangas)",
                             "source": "../data/images/p1/kit-ev-m-SLEEVES.png",
                             "type": "image",
                             "parameters": {
@@ -115,7 +115,7 @@
                             }
                         },
                         {
-                            "title": "Color 3 (Shorts)",
+                            "title": "Color 3 (Pantaloneta)",
                             "source": "../data/images/p1/kit-ev-m-SHORTS.png",
                             "type": "image",
                             "parameters": {
@@ -857,7 +857,7 @@
                             }
                         },
                         {
-                            "title": "Color 2 (Sleeves)",
+                            "title": "Color 2 (Mangas)",
                             "source": "../data/images/p2/kit-ev-m-SLEEVES.png",
                             "type": "image",
                             "parameters": {
@@ -904,7 +904,7 @@
                             }
                         },
                         {
-                            "title": "Color 3 (Shorts)",
+                            "title": "Color 3 (Pantaloneta)",
                             "source": "../data/images/p2/kit-ev-m-SHORTS.png",
                             "type": "image",
                             "parameters": {
@@ -1333,7 +1333,7 @@
                             }
                         },
                         {
-                            "title": "Indoor Logo (Shorts)",
+                            "title": "Indoor Logo (Pantaloneta)",
                             "source": "../data/images/p2/jersix-pittogramma-1.png",
                             "type": "image",
                             "parameters": {
@@ -1562,7 +1562,7 @@
                             }
                         },
                         {
-                            "title": "Number (Shorts)",
+                            "title": "Número (Pantaloneta)",
                             "source": "00",
                             "type": "text",
                             "parameters": {
